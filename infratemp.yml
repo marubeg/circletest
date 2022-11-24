@@ -33,9 +33,10 @@ Parameters:
     Type: String
     Default: "10.0.3.0/24"
 
-  KeyName: 
-    Description : Name of an existing EC2 KeyPair.
-    Type: AWS::EC2::KeyPair::ansible-role
+
+#  KeyName: 
+#   Description : Name of an existing EC2 KeyPair.
+#    Type: AWS::EC2::KeyPair::KeyName
 
   SSHLocation:
     Description: IP address range that can be used to SSH to the EC2 instances
@@ -201,7 +202,8 @@ Resources:
     Properties:
       ImageId: !Ref EC2AMIId                  # free-ami-id myAMI_ID:ami-0ea1ee9aaf6da739c
       InstanceType: "t2.micro"
-      KeyName: !Ref KeyName
+#      KeyName: !Ref KeyName
+      KeyName: "ansible-role"
       Tenancy: "default"
       NetworkInterfaces:
         - AssociatePublicIpAddress: "true"    # publicIPアドレスの動的割り当て設定
