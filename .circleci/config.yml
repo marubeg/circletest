@@ -17,8 +17,9 @@ jobs:
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           aws-region: AWS_DEFAULT_REGION
       - run:
-          name: Check aws cli versions
-          command: aws --version
+          name: deploy Cloudformation
+          command: |
+            aws cloudformation deploy --stack-name sampleStackFormationCI --template-file file://infratemp.yml
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
