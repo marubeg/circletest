@@ -1,3 +1,7 @@
+#!/bin/bash -eo pipefail
+# KeyNameの直接指定あり、EC2作成記述参照
+# aws cloudformation deploy --stack-name sampleStackFormationCI --template-file infratemp.yml
+
 AWSTemplateFormatVersion: "2010-09-09"
 Description: "webserver_create_template"
 
@@ -33,10 +37,6 @@ Parameters:
     Type: String
     Default: "10.0.3.0/24"
 
-
-#  KeyName: 
-#   Description : Name of an existing EC2 KeyPair.
-#    Type: AWS::EC2::KeyPair::KeyName
 
   SSHLocation:
     Description: IP address range that can be used to SSH to the EC2 instances
@@ -202,7 +202,6 @@ Resources:
     Properties:
       ImageId: !Ref EC2AMIId                  # free-ami-id myAMI_ID:ami-0ea1ee9aaf6da739c
       InstanceType: "t2.micro"
-#      KeyName: !Ref KeyName
       KeyName: "ansible-role"
       Tenancy: "default"
       NetworkInterfaces:
