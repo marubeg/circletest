@@ -3,4 +3,4 @@
   hosts: ec2
   become: yes
   roles:
-    - { ole: git, tags: git }
+    - { role: git, tags: git }
