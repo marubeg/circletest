@@ -1,6 +1,5 @@
 ---
-- name: Playbook for staging
-  hosts: ec2
+- hosts: ec2
   become: yes
   roles:
     - { role: git, tags: git }
