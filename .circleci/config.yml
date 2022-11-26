@@ -34,9 +34,9 @@ jobs:
           
 # 下記は、ファイルパス記述
       - ansible-playbook/playbook:
-          playbook: ansible/playbook.yml
-          inventory: ANAIBLE_INVENTORY
-          playbook-options: "-u ec2-user --private_key ~/.ssh/id_rsa -i ansible/hosts/inventory"
+          playbook: ~/ansible/playbook.yml
+#          inventory: ANAIBLE_INVENTORY
+          playbook-options: "-u ec2-user --private-key  -i ansible/hosts/inventory ~/.ssh/ansible-role.pem"
 
 
 
