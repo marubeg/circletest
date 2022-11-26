@@ -6,6 +6,7 @@ orbs:
   aws-cli: circleci/aws-cli@3.1.1
 
 # ansible用のorbsを追加
+# thirdpartyの設定を変更
   ansible-playbook: orbss/ansible-playbook@0.0.5
 
 jobs:
