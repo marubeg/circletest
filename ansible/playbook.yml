@@ -1,6 +1,6 @@
 ---
 - name: Playbook for staging
-  hosts: inventory
+  hosts: ec2
   become: yes
   roles:
-    - {role: git, tags: git}
+    - { ole: git, tags: git }
