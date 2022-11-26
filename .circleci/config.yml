@@ -36,8 +36,7 @@ jobs:
       - ansible-playbook/playbook:
           playbook: ansible/playbook.yml
 #          inventory: ANAIBLE_INVENTORY
-          playbook-options: "-u ec2-user --private-key  -i ansible/hosts/inventory ~/.ssh/ansible-role.pem"
-
+          playbook-options: "-u ec2-user -i ansible/hosts/inventory --private-key ~/.ssh/ansible-role.pem"
 
 
 # workflowsをリポジトリと同じ名称にしておく
